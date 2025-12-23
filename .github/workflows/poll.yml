@@ -11,4 +11,4 @@ jobs:
       - name: Call backend
         run: |
           curl -X POST https://status-aggregator-backend.onrender.com/internal/poll-status \
-          -H "X-Cron-Secret:cron-secret"
+          -H "X-Cron-Secret: cron-secret"
