@@ -1,0 +1,14 @@
+name: Poll Status
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call backend
+        run: |
+          curl -X POST https://<your-render-url>/internal/poll-status \
+          -H "X-Cron-Secret:cron-secret"
